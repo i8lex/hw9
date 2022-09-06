@@ -71,11 +71,33 @@ const books = [
     },
 ]
 
- const genre = books.map((item) => {
+ const genre = books.filter((item) => {
         if (item.genre === `Детектив`) {
-            return item.name.toUpperCase();
+            return item;
         }
-        return item.name
- });
+
+ }).map((item) => {
+    return item.name.toUpperCase();
+});
 
 console.log(genre);
+
+const centuryXX = books.filter((item) => {
+    if (item.year < 2000) {
+        return item;
+    }
+}).map((item) => {
+    return item.name.toUpperCase();
+});
+
+console.log(centuryXX);
+
+const centuryXXI = books.filter((item) => {
+    if (item.year >= 2000) {
+        return item;
+    }
+}).map((item) => {
+    return item.name.toUpperCase();
+});
+
+console.log(centuryXXI);
